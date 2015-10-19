@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+echo
+test -e /weexrc || echo "ERROR: /weexrc is missing. Add it as a volume."
+cp /weexrc ~/.weexrc
+test -e /files || echo "ERROR: /files is missing. Add it as a volume."
+cd /files
+weex $@
