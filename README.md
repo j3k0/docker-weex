@@ -9,8 +9,10 @@ docker build -t jeko/weex:latest .
 
 # Usage
 
+To synchronise the `files` directory using the `weexrc` configuration found in the working directory:
+
 ```sh
-$ docker run --rm -it jeko/weex [OPTIONS] HOST...
+$ docker run --rm -it -v $(pwd)/files:/files -v $(pwd)/weexrc:/weexrc jeko/weex [OPTIONS] HOST...
 
 options:
   -h | --help           display this help and exit
@@ -23,3 +25,6 @@ options:
   -D | --debug-ftplib   output debugging information for ftplib
   -V | --version        display version information and exit
 ```
+
+For details about weexrc: http://www.linuxcertif.com/man/1/weex/
+
