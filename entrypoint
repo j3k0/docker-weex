@@ -5,4 +5,5 @@ test -e /weexrc || echo "ERROR: /weexrc is missing. Add it as a volume."
 cp /weexrc ~/.weexrc
 test -e /files || echo "ERROR: /files is missing. Add it as a volume."
 cd /files
-weex $@
+echo "Running weex with args: $@"
+weex "$@"
